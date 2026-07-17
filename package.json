@@ -1,0 +1,11 @@
+{
+  "name": "ourprovisions-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static public landing page + beta front door for ourprovisions.app. Shares nothing with the app.",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx --yes serve@14 ."
+  },
+  "license": "UNLICENSED"
+}

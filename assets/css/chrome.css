@@ -1,0 +1,168 @@
+/* ============================================================
+   chrome.css — the reusable front-door system.
+
+   Design tokens, layout, typography, nav, footer, buttons, the
+   form primitive (chips + fields), and the scroll-reveal. This
+   is the part a sister site in the fleet lifts wholesale; it
+   supplies its own page.css + index.html for the story.
+
+   Ported verbatim from the approved mockup
+   (ourprovisions/docs/mockups/mockup_landing.html). Values are
+   tuned by eye — re-check against the mockup before "improving"
+   any of them. The mockup is the tiebreaker.
+   ============================================================ */
+
+:root{
+  --espresso:#2C1A0E;
+  --cream:#FAF4EC;
+  --cream-deep:#F3E9DA;
+  --sand:#C9A97A;
+  --sand-soft:#E4D2B3;
+  --clay:#A0724A;
+  --teal:#0D9488;
+  --teal-deep:#0b7f76;
+  --teal-lift:#12b3a4;
+  --abyss:#020F1A;
+  --abyss-soft:#0a1e2e;
+  --paper:#FBF7F0;
+  --ink-soft:#6f5a45;
+  --ink-dim:#8a7660;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--espresso);
+  font-family:'Lato',sans-serif;
+  font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+.wrap-narrow{max-width:660px;margin:0 auto;padding:0 32px;}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;font-weight:700;}
+.eyebrow{
+  font-size:11px;letter-spacing:4.5px;text-transform:uppercase;
+  color:var(--sand);font-weight:700;
+}
+a{color:inherit;}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;}
+  .reveal-up{opacity:1 !important;transform:none !important;}
+}
+
+/* ================= NAV ================= */
+/* top:0 — the mockup's 36px offset existed only to clear the .mockbar,
+   which is gone in the real build. */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  padding:16px 0;
+  background:rgba(250,244,236,0.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,169,122,0.22);
+  transition:background .3s ease, border-color .3s ease;
+}
+.nav.on-dark{
+  background:rgba(2,15,26,0.72);
+  border-bottom-color:rgba(201,169,122,0.16);
+}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;}
+.brand{
+  font-family:'Playfair Display',serif;font-weight:700;font-size:23px;
+  letter-spacing:-0.3px;transition:color .3s ease;
+}
+.brand .our{color:var(--clay);font-style:italic;}
+.nav.on-dark .brand{color:var(--cream);}
+.nav.on-dark .brand .our{color:var(--sand);}
+.nav-cta{
+  font-family:'Lato';font-size:12.5px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--teal);background:transparent;border:1.5px solid var(--teal);border-radius:999px;
+  padding:10px 20px;cursor:pointer;text-decoration:none;
+  transition:background .25s ease, color .25s ease, border-color .25s ease, transform .18s ease;
+}
+/* over the dark hero, the ghost reads in sand */
+.nav.on-dark .nav-cta{color:var(--sand);border-color:rgba(201,169,122,0.55);}
+/* once the hero's own CTA is gone, this one becomes the loud one */
+.nav.solid .nav-cta{
+  color:#fff;background:var(--teal);border-color:var(--teal);
+  box-shadow:0 4px 14px rgba(13,148,136,0.28);
+}
+.nav-cta:hover{transform:translateY(-1px);}
+.nav.solid .nav-cta:hover{background:var(--teal-deep);}
+.nav:not(.solid) .nav-cta:hover{background:rgba(13,148,136,0.12);}
+.nav.on-dark:not(.solid) .nav-cta:hover{background:rgba(201,169,122,0.14);color:var(--cream);}
+.nav-cta:focus-visible{outline:2px solid var(--sand);outline-offset:3px;}
+
+/* ================= BUTTONS ================= */
+.btn{
+  font-family:'Lato';font-size:16px;font-weight:900;letter-spacing:0.6px;
+  color:#fff;background:var(--teal);border:none;border-radius:14px;
+  padding:17px 38px;cursor:pointer;transition:all .18s ease;text-decoration:none;
+  display:inline-block;
+  box-shadow:0 8px 24px rgba(13,148,136,0.28);
+}
+.btn:hover{background:var(--teal-deep);transform:translateY(-2px);box-shadow:0 12px 30px rgba(13,148,136,0.34);}
+.btn:focus-visible{outline:2px solid var(--espresso);outline-offset:3px;}
+/* .btn-ghost is declared twice on purpose: the dark-hero variant first, the
+   light-section variant second. Equal specificity → the light one wins by
+   source order, which is the mockup's behaviour. Do NOT reorder. */
+.btn-ghost{
+  font-size:14px;font-weight:700;color:rgba(250,244,236,0.75);text-decoration:none;
+  border-bottom:1.5px solid rgba(201,169,122,0.5);padding-bottom:3px;transition:all .18s ease;
+}
+.btn-ghost:hover{color:var(--cream);border-bottom-color:var(--sand);}
+.btn-ghost{
+  font-size:14px;font-weight:700;color:var(--ink-soft);text-decoration:none;
+  border-bottom:1.5px solid var(--sand-soft);padding-bottom:3px;transition:all .18s ease;
+}
+.btn-ghost:hover{color:var(--espresso);border-bottom-color:var(--clay);}
+
+/* ================= FORM PRIMITIVE ================= */
+/* The question block, the single-select chips, and the text fields.
+   Field identity is declared in the markup (data-field / id); this file
+   only styles them, and door.js reads them generically. */
+.q{margin-bottom:42px;max-width:660px;}
+.q .ask{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:16px;}
+.optional{
+  font-size:10.5px;color:var(--sand);font-weight:900;text-transform:uppercase;
+  letter-spacing:1.6px;margin-left:10px;font-family:'Lato';
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{
+  font-family:'Lato';font-size:15px;font-weight:700;color:var(--espresso);
+  background:var(--paper);border:1.5px solid var(--sand-soft);border-radius:999px;
+  padding:11px 20px;cursor:pointer;transition:all .15s ease;user-select:none;
+}
+.chip:hover{border-color:var(--sand);transform:translateY(-1px);}
+.chip.on{
+  background:var(--teal);border-color:var(--teal);color:#fff;
+  box-shadow:0 5px 16px rgba(13,148,136,0.28);
+}
+.chip:focus-visible{outline:2px solid var(--teal-deep);outline-offset:2px;}
+.field{
+  width:100%;font-family:'Lato';font-size:16px;color:var(--espresso);
+  background:var(--paper);border:1.5px solid var(--sand-soft);border-radius:12px;
+  padding:13px 16px;transition:border-color .15s ease;
+}
+.field::placeholder{color:#b8a489;}
+.field:focus{outline:none;border-color:var(--teal);}
+textarea.field{resize:vertical;min-height:92px;line-height:1.55;}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.trio{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.trio #f-email{grid-column:1 / -1;}
+@media (max-width:520px){.pair,.trio{grid-template-columns:1fr;}}
+
+/* ================= FOOTER ================= */
+.foot{
+  background:var(--abyss);color:rgba(250,244,236,0.5);
+  padding:52px 0;font-size:13px;
+}
+.foot-in{max-width:1080px;margin:0 auto;padding:0 32px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+.foot .brand{color:var(--cream);}
+.foot .tag{font-family:'Playfair Display',serif;font-style:italic;color:var(--sand);font-size:14px;}
+
+/* ================= SCROLL REVEAL ================= */
+.reveal-up{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1);}
+.reveal-up.seen{opacity:1;transform:none;}

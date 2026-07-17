@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OurProvisions — the list your household can trust</title>
+<meta name="description" content="The shared grocery list your whole household can run together — and it learns how you shop. In beta from Velayo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<!-- chrome (reusable system) first, then this page's story -->
+<link rel="stylesheet" href="assets/css/chrome.css">
+<link rel="stylesheet" href="assets/css/page.css">
+</head>
+<body>
+
+<div id="page">
+
+<nav class="nav on-dark" id="nav">
+  <div class="nav-in">
+    <div class="brand"><span class="our">Our</span>Provisions</div>
+    <!-- CTA SWAP POINT — "Come aboard" (beta) → "Download" (shipped). Pairs with the status slot below. -->
+    <a href="#aboard" class="nav-cta">Come aboard</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <!-- STATUS SLOT — the product's stage, swapped as it ships.
+             Beta → Available now → New version → … Pairs with the CTA:
+             "Beta"/"Come aboard" today; "Available now"/"Download" later. -->
+        <div class="eyebrow">Beta</div>
+        <h1>The list your household can <em>trust.</em></h1>
+        <p class="hero-sub">That list on your fridge, or in your pocket, was always one person's job. This one belongs to your <b>whole household</b> — and it learns how you shop.</p>
+        <div class="hero-actions">
+          <!-- CTA SWAP POINT — "Come aboard" → "Download" when the app ships. -->
+          <a href="#aboard" class="btn">Come aboard</a>
+          <a href="#thesis" class="btn-ghost">Why we built it</a>
+        </div>
+      </div>
+
+      <div class="device-wrap">
+        <div class="device">
+          <div class="phone" id="phone">
+            <div class="op-header">
+              <div class="op-topbar">
+                <div class="op-av">DH</div>
+                <div class="op-house"><span class="anchor">⚓</span>SACANDAGA<span class="anchor">⚓</span></div>
+                <div class="op-dots">⋮⋮</div>
+              </div>
+              <div class="op-mark"><h2>Our Provisions</h2></div>
+              <div class="op-tabs">
+                <div class="op-tab"><span class="ico">☀</span>PLAN</div>
+                <div class="op-tab"><span class="ico">▦</span>BROWSE</div>
+                <div class="op-tab active"><span class="ico">🧺</span>SHOP<span class="badge" id="badge">20</span></div>
+              </div>
+            </div>
+            <div class="shopbar">
+              <div class="shopbar-top">
+                <div class="shop-count"><span id="ct">14</span> of 20 checked</div>
+                <div class="shop-acts">
+                  <div class="cycle-btn"><i></i><i></i><i></i></div>
+                  <div class="wrap-btn">Wrap up</div>
+                </div>
+              </div>
+              <div class="shop-hidden"><span id="hid">14</span> checked items hidden</div>
+              <div class="prog"><span id="bar"></span></div>
+            </div>
+            <div class="az">A–Z · <span id="ic">6</span> items</div>
+            <div id="list"></div>
+          </div>
+          <div class="live"><span class="dot"></span> Live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THESIS ================= -->
+<section class="thesis" id="thesis">
+  <div class="wrap-narrow">
+    <div class="reveal-up">
+      <div class="eyebrow">The problem</div>
+      <h2>Nobody has ever enjoyed a grocery <em>run.</em></h2>
+      <p>Shopping without a list takes longer, costs more, and you still get home missing the one thing you went for. Shopping with a list means somebody had to build the list — and that somebody is always the same somebody.</p>
+      <p>So most households run on a half-remembered list in one person's head, and everyone else guesses. You get home with the oat milk. So does your partner. Or nobody does.</p>
+      <p>Here's the part nobody says out loud: <b>you don't need a budget to control what you spend on food. You need a list.</b> The impulse buy is what happens when you're wandering. Groceries are one of the biggest checks your household writes every month, and it's the one nobody's actually running.</p>
+      <p>We called it <b>provisions</b>, not groceries, for a reason. When you stock a boat you can't run back to the store — so you plan well, waste less, and get it right together. That's what we're bringing home to the kitchen.</p>
+      <div class="pull">So we built the list your whole household can run together — and it remembers what you buy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT'S READY ================= -->
+<section class="ready">
+  <div class="wrap">
+    <div class="sec-head reveal-up">
+      <div class="eyebrow">Aboard today</div>
+      <h2>Built small, on <em>purpose.</em></h2>
+      <p>Real households have been shopping on this since June. Everything here earned its place by being watched.</p>
+    </div>
+
+    <div class="shots">
+      <div class="reveal-up">
+        <div class="shot-slot">
+          <div class="shot-screen"><img src="assets/img/screen-shop.jpg" width="520" height="982" loading="lazy" alt="The Sacandaga shop list mid-shop, showing checked and unchecked items by category"></div>
+        </div>
+        <div class="shot-cap">
+          <h3>Shop it down to nothing</h3>
+          <p>Check things off as you go and watch the list shrink. Whoever else is shopping sees it happen — so nobody's buying the milk twice, and you both know exactly what's left.</p>
+        </div>
+      </div>
+
+      <div class="reveal-up">
+        <div class="shot-slot">
+          <div class="shot-screen"><img src="assets/img/screen-browse.jpg" width="520" height="982" loading="lazy" alt="Browsing the catalog with an item's actions revealed: Edit, Staple, Hide"></div>
+        </div>
+        <div class="shot-cap">
+          <h3>It already knows your regulars</h3>
+          <p>Everything your household actually buys, in one place. Add what you need in a tap. Mark the things you always run out of and they stop being your problem to remember.</p>
+        </div>
+      </div>
+
+      <div class="reveal-up">
+        <div class="shot-slot">
+          <div class="shot-screen"><img src="assets/img/screen-crew.jpg" width="520" height="982" loading="lazy" alt="The Sacandaga household showing three members and the invite button"></div>
+        </div>
+        <div class="shot-cap">
+          <h3>Hand it to your crew</h3>
+          <p>Add the people you live with and the list is theirs too — same list, same moment, whoever's at the store. Run more than one house? Each keeps its own. A list one person keeps is a chore. A list everyone keeps is just how the house runs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLEET ================= -->
+<section class="fleet">
+  <div class="wrap-narrow reveal-up">
+    <div class="eyebrow">Velayo</div>
+    <h2>OurProvisions is our first <em>waypoint.</em></h2>
+    <p>Velayo builds apps that help people live healthier, happier, and lighter on the earth. We started with the grocery list because everyone eats — and because the people you share a list with are the same people you'd share everything else with.</p>
+  </div>
+</section>
+
+<!-- ================= COME ABOARD =================
+     The questionnaire. Each single-select group declares its column via
+     data-field; door.js reads data-field + the selected chip's data-val,
+     so the mechanic never hard-codes the questions. -->
+<section class="aboard" id="aboard">
+  <div class="wrap">
+    <div class="aboard-head reveal-up">
+      <div class="eyebrow">The toll</div>
+      <h2>Come <em>aboard.</em></h2>
+      <p>OurProvisions is in beta. There's one price of admission: tell us how your household shops.</p>
+    </div>
+    <div class="toll reveal-up">
+      Seven questions. They're not a form — they're what we're building from. Every one of them decides something real about what we make next, and we read every answer. <b>Finish them and you're in.</b>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">Do you keep a running grocery list?</div>
+      <div class="chips" data-single data-field="keeps_list">
+        <div class="chip" tabindex="0" data-val="always">Always — there's one going</div>
+        <div class="chip" tabindex="0" data-val="sometimes">Sometimes</div>
+        <div class="chip" tabindex="0" data-val="wings_it">I wing it</div>
+      </div>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">Who does the shopping in your home?</div>
+      <div class="chips" data-single data-field="who_shops">
+        <div class="chip" tabindex="0" data-val="mostly_me">Mostly me</div>
+        <div class="chip" tabindex="0" data-val="split">We split it</div>
+        <div class="chip" tabindex="0" data-val="someone_else">Someone else — I plan</div>
+      </div>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">How does the shopping actually happen?</div>
+      <div class="chips" data-single data-field="shop_mode">
+        <div class="chip" tabindex="0" data-val="in_store">We go to the store</div>
+        <div class="chip" tabindex="0" data-val="delivered">We order it in</div>
+        <div class="chip" tabindex="0" data-val="mixed">A bit of both</div>
+      </div>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">Who's on your crew?</div>
+      <div class="chips" data-single data-field="crew">
+        <div class="chip" tabindex="0" data-val="just_me">Just me</div>
+        <div class="chip" tabindex="0" data-val="partner">A partner</div>
+        <div class="chip" tabindex="0" data-val="family">A family</div>
+        <div class="chip" tabindex="0" data-val="roommates">A house of roommates</div>
+      </div>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">More than one household?</div>
+      <div class="chips" data-single data-field="multi_household" data-type="boolean">
+        <div class="chip" tabindex="0" data-val="false">Just one</div>
+        <div class="chip" tabindex="0" data-val="true">Yes — I run more than one</div>
+      </div>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">What would make your shopping better?<span class="optional">Optional</span></div>
+      <textarea class="field" id="f-wishes" data-field="wishes" placeholder="Anything — a frustration, a wish, a habit you'd never break."></textarea>
+    </div>
+
+    <div class="q reveal-up">
+      <div class="ask">Who's coming aboard?</div>
+      <div class="trio">
+        <input class="field" id="f-first" placeholder="First name">
+        <input class="field" id="f-last" placeholder="Last name">
+        <input class="field" id="f-email" placeholder="Email" type="email">
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap aboard-foot reveal-up">
+    <button class="btn" id="submit">Come aboard</button>
+    <p class="cta-note">We'll only ever use this to get you set up on OurProvisions. No lists, no noise.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="brand"><span class="our" style="color:var(--sand);font-style:italic;">Our</span>Provisions</div>
+    <div class="tag">Live Better. Live Smarter.</div>
+    <div>© 2026 Velayo, Inc.</div>
+  </div>
+</footer>
+
+</div>
+
+<!-- ================= DONE — THE WELCOME DOOR ================= -->
+<section class="done" id="done">
+  <div class="wrap-narrow">
+    <div class="eyebrow">You're on the manifest</div>
+    <h2>Welcome <em>aboard.</em></h2>
+    <p class="lead">Thanks — we read every one of these, and yours is already shaping what we build next.</p>
+
+    <div class="door">
+      <h3>Getting your household set up</h3>
+      <ol>
+        <li><b>There's no App Store download.</b> OurProvisions installs straight from the web — open the link below on your phone.</li>
+        <li>Tap your browser's share button, then <b>Add to Home Screen</b>. It'll sit with your other apps and open like one.</li>
+        <li>We've filled your details in already — <b>change anything you like</b>, confirm the code we email you, and you're in.</li>
+      </ol>
+      <a href="#" class="btn" id="door-btn">Open OurProvisions</a>
+      <p class="door-one">The list gets much better the moment someone else is on it. If you share a kitchen, invite them.</p>
+      <p class="door-note">Stuck at any step? Reply to the welcome email and we'll help you get set up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- config.js is generated at build time from env vars (Supabase URL + anon key). -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/demo-list.js"></script>
+<script src="assets/js/door.js"></script>
+
+</body>
+</html>
