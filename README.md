@@ -103,3 +103,7 @@ Separate Vercel project (`ourprovisions-landing`), separate origin from the app.
 7. **Insert-failure resilience** — break the insert (bad key) and confirm the
    user still reaches the door.
 8. **DNS** — resolves, TLS valid, no redirect loop (grey cloud, not orange).
+
+## Images are cached forever
+
+`assets/img/*` is served `Cache-Control: public, max-age=31536000, immutable` (see `vercel.json`). Browsers keep an image for a year and never re-check it, even on refresh. **To change a screenshot, save it under a new file name and update the `<img src>`. Never overwrite an image in place**, or returning visitors keep seeing the old one.
